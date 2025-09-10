@@ -28,6 +28,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         window.location.href = '/';
     }
     title.textContent = data.name;
+    document.querySelector('title').innerHTML += ` - ${data.name}`;
     desc.textContent = data.features;
     contact.textContent = data.contact;
     address.textContent = data.address;

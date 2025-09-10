@@ -4,6 +4,8 @@ const exp = document.querySelector('h5');
 const title = document.querySelector('h1');
 const add = document.querySelector('p');
 
+const api_key = 'AIzaSyD99qDYYY2czB3thEEwbRBOR2ucdPfUjxs'
+
 async function getRestaurants() {
   const snapshot = await getDocs(collection(db, "restaurants"));
   const restaurants = [];
@@ -15,8 +17,7 @@ async function getRestaurants() {
 }
 
 async function getCoordinatesFromAddress(address) {
-  const apiKey = "AIzaSyD99qDYYY2czB3thEEwbRBOR2ucdPfUjxs";
-  const url = `https://maps.googleapis.com/maps/api/geocode/json?address=${encodeURIComponent(address)}&key=${apiKey}`;
+  const url = `https://maps.googleapis.com/maps/api/geocode/json?address=${encodeURIComponent(address)}&key=${api_key}`;
 
   const response = await fetch(url);
   const data = await response.json();
@@ -38,7 +39,7 @@ const allowedBounds = {
 
 const loadGoogleMaps = () => new Promise((resolve, reject) => {
   const script = document.createElement("script");
-  script.src = `https://maps.googleapis.com/maps/api/js?key=AIzaSyD99qDYYY2czB3thEEwbRBOR2ucdPfUjxs`;
+  script.src = `https://maps.googleapis.com/maps/api/js?key=${api_key}`;
   script.onload = resolve;
   script.onerror = reject;
   document.head.appendChild(script);
