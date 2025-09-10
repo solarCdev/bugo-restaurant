@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>곰골식당</title>
+  <style>
+    body {
+      font-family: 'Noto Sans KR', sans-serif;
+      margin: 0;
+      background: #f5f5f5;
+      color: #333;
+    }
+    
+    .container {
+      max-width: 800px;
+      margin: 20px auto;
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+    
+    h1 {
+      font-size: 28px;
+      margin-bottom: 5px;
+    }
+    
+    .desc {
+      color: #777;
+      margin-bottom: 15px;
+    }
+    
+    ul {
+      list-style: none;
+      padding: 0;
+      line-height: 1.8;
+    }
+    
+    .photos h2,
+    .menu h2 {
+      margin-top: 30px;
+      margin-bottom: 10px;
+      font-size: 20px;
+    }
+    
+    .photo-grid {
+      display: flex;
+      gap: 10px;
+    }
+    
+    .photo-grid img {
+      width: 48%;
+      border-radius: 8px;
+    }
+    
+    .menu-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 15px;
+    }
+    
+    .menu-item {
+      text-align: center;
+      background: #fafafa;
+      border-radius: 10px;
+      padding: 10px;
+      transition: transform 0.2s;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    }
+    
+    .menu-item:hover {
+      transform: translateY(-3px);
+    }
+    
+    .menu-item img {
+      width: 100%;
+      border-radius: 8px;
+    }
+    
+    .menu-item p {
+      font-weight: bold;
+      margin: 8px 0 5px;
+    }
+    
+    .menu-item span {
+      color: #444;
+    }
+    
+  </style>
+  <script type="module">
+    // Import the functions you need from the SDKs you need
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/12.2.1/firebase-app.js";
+    import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.2.1/firebase-analytics.js";
+    import {getFirestore}from "https://www.gstatic.com/firebasejs/12.2.1/firebase-firestore.js";
+    // TODO: Add SDKs for Firebase products that you want to use
+    // https://firebase.google.com/docs/web/setup#available-libraries
+  
+    // Your web app's Firebase configuration
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+    const firebaseConfig = {
+      apiKey: "AIzaSyCpWFE7yW42VTW9esyAxa-fCMsmonlrOG0",
+      authDomain: "sdbg-food.firebaseapp.com",
+      projectId: "sdbg-food",
+      storageBucket: "sdbg-food.firebasestorage.app",
+      messagingSenderId: "835905877493",
+      appId: "1:835905877493:web:cc51bda97eb3aefbb39cbc",
+      measurementId: "G-V6YCDRVCK9"
+    };
+  
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const analytics = getAnalytics(app);
+    const db = getFirestore(app);
+    window.app = app;
+    window.db = db;
+  </script>
+  <script type="module" src="info.js"></script>
+</head>
+<body>
+  <div class="loading"><span>로딩중입니다...</span></div>
+  <div class="container">
+    <!-- 식당 정보 -->
+    <section class="info">
+      <h1>곰곰식당</h1>
+      <p class="desc">간단한 소개 간단한 소개 간단한 소개 간단한 소개 간단한 소개 간단한 소개</p>
+      <ul>
+        <li><strong>위치</strong> <span class="add"></span></li>
+        <!-- <li><strong>영업 시간</strong> <span class="time"></span></li> -->
+        <li><strong>전화번호</strong> <span class="call"></span></li>
+      </ul>
+    </section>
+
+    <!-- 관련 사진 -->
+    <!-- <section class="photos">
+      <h2>관련 사진</h2>
+      <div class="photo-grid">
+        <img src="https://via.placeholder.com/350x200" alt="가게 외부">
+        <img src="https://via.placeholder.com/350x200" alt="메뉴 사진">
+      </div>
+    </section> -->
+
+    <!-- 메뉴 -->
+    <section class="menu">
+      <h2>메뉴</h2>
+      <div class="menu-grid">
+        </div>
+      </div>
+    </section>
+  </div>
+</body>
+</html>

@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "@googlemaps/js-api-loader": "^1.16.10",
+    "firebase": "^12.1.0"
+  }
+}
