@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     const data = await getRestaurantById(id);
     if (!data) {
         alert('잘못된 id입니다.');
-        window.location.href = '/';
+        window.history.back();
     }
     title.textContent = data.name;
     document.querySelector('title').innerHTML += ` - ${data.name}`;
