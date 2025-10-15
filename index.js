@@ -80,7 +80,7 @@ async function initMap() {
       });
       console.log(position)
       marker.addListener("click", () => {
-        document.querySelector('.anchor').href = '/info.html?id=' + r.id;
+        document.querySelector('.anchor').href = 'https://solarcdev.github.io/bugo-restaurant/info.html?id=' + r.id;
         exp.textContent = (Array(r.features)).join("\n") || "설명이 없습니다.";
         title.textContent = r.name || "이름이 없습니다.";
         add.textContent = r.address || "주소가 없습니다.";
